@@ -4,26 +4,49 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Vundle
 Plugin 'gmarik/Vundle.vim'
-Plugin 'solarnz/thrift.vim'
-Plugin 'fatih/vim-go'
+
+" Syntax checking & tab completion
+Plugin 'scrooloose/syntastic'
+Plugin 'ervandew/supertab'
+
+" Airline + status bar plugins
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'nathanaelkane/vim-indent-guides'
+
+" Color schemes
+Plugin 'michalbachowski/vim-wombat256mod'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'veloce/vim-aldmeris'
+
+" Language-specific plugins
+Plugin 'solarnz/thrift.vim'
+Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-rails'
+Plugin 'autowitch/hive.vim'
+Plugin 'wting/rust.vim'
 
 call vundle#end()
 filetype plugin indent on
 
 set t_Co=256
-colorscheme solarized
+"colorscheme solarized
+"colorscheme aldmeris
+colorscheme wombat256mod
+
 "let g:solarized_visibility = "high"
 "let g:solarized_constrast = "high"
 
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline_powerline_fonts = 1
+
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 set number
 "set relativenumber
@@ -36,6 +59,7 @@ set expandtab
 set ai
 set hlsearch
 set wildmenu
+set wildmode=longest,list
 set showcmd
 set ruler
 "set mouse=a
@@ -50,6 +74,9 @@ no i k
 no j h
 no k j
 no l l
+
+inoremap jl <esc>
+inoremap lj <esc>
 
 "noremap gi gk
 "noremap gk gj
