@@ -77,6 +77,10 @@ no l l
 
 inoremap jl <esc>
 inoremap lj <esc>
+vnoremap jl <esc>
+vnoremap lj <esc>
+
+noremap ; $
 
 "noremap gi gk
 "noremap gk gj
