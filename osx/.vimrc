@@ -22,6 +22,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'michalbachowski/vim-wombat256mod'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'veloce/vim-aldmeris'
+Plugin 'ciaranm/inkpot'
 
 " Language-specific plugins
 Plugin 'solarnz/thrift.vim'
@@ -37,6 +38,7 @@ set t_Co=256
 "colorscheme solarized
 "colorscheme aldmeris
 colorscheme wombat256mod
+"colorscheme inkpot
 
 "let g:solarized_visibility = "high"
 "let g:solarized_constrast = "high"
@@ -63,6 +65,7 @@ set wildmode=longest,list
 set showcmd
 set ruler
 "set mouse=a
+"set clipboard=unnamed
 
 syntax on
 
