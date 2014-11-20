@@ -10,6 +10,13 @@ Plugin 'gmarik/Vundle.vim'
 " Syntax checking & tab completion
 Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-surround'
+
+" Language-specific plugins
+Plugin 'wting/rust.vim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'bartlomiejdanek/vim-dart'
 
 " Airline + status bar plugins
 Plugin 'bling/vim-airline'
@@ -18,28 +25,18 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'nathanaelkane/vim-indent-guides'
 
+
 " Color schemes
-Plugin 'michalbachowski/vim-wombat256mod'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'veloce/vim-aldmeris'
-Plugin 'ciaranm/inkpot'
-
-" Language-specific plugins
-Plugin 'wting/rust.vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'bartlomiejdanek/vim-dart'
-Plugin 'solarnz/thrift.vim'
-Plugin 'fatih/vim-go'
-Plugin 'tpope/vim-rails'
-Plugin 'autowitch/hive.vim'
+Plugin 'dsolstad/vim-wombat256i'
 
 call vundle#end()
 
 filetype plugin indent on
 
 set t_Co=256
-"colorscheme wombat256i
-colorscheme wombat256mod
+colorscheme wombat256i
 
 "let g:solarized_visibility = "high"
 "let g:solarized_constrast = "high"
@@ -49,9 +46,9 @@ set encoding=utf-8
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+let g:airline_symbols.space = "\ua0"
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_symbols.space = "\ua0"
 
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
@@ -109,4 +106,9 @@ runtime macros/matchit.vim
 
 set laststatus=2
 set timeoutlen=50
+let g:airline_powerline_fonts=1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.space="\ua0"
 
