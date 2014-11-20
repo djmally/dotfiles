@@ -1,4 +1,5 @@
 #!/bin/sh
+/usr/bin/VBoxClient-all
 
 # Set mouse cursor
 xsetroot -cursor_name left_ptr
