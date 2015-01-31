@@ -7,16 +7,20 @@ call vundle#begin()
 " Vundle
 Plugin 'gmarik/Vundle.vim'
 
-" Syntax checking & tab completion
+" Syntax checking, highlighting,  & tab completion
 Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-sleuth'
+Plugin 'junegunn/rainbow_parentheses.vim'
 
 " Language-specific plugins
 Plugin 'wting/rust.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'bartlomiejdanek/vim-dart'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " Airline + status bar plugins
 Plugin 'bling/vim-airline'
@@ -92,6 +96,7 @@ noremap ; $
 "noremap  <buffer> <silent> k gj
 "noremap  <buffer> <silent> 0 g0
 "noremap  <buffer> <silent> $ g$
+noremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Lkzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
 
 
 let &colorcolumn=80
@@ -112,3 +117,9 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.space="\ua0"
 
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+let g:syntastic_ocaml_checkers = ['merlin']
+
+"au FileType ocaml setl sw=2 sts=2 et
+"au FileType ruby setl sw=2 sts=2 et
