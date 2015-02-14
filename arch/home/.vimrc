@@ -7,13 +7,14 @@ call vundle#begin()
 " Vundle
 Plugin 'gmarik/Vundle.vim'
 
-" Syntax checking, highlighting,  & tab completion
+" Syntax checking, highlighting, & tab completion
 Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-sleuth'
 Plugin 'junegunn/rainbow_parentheses.vim'
+Plugin 'tpope/vim-endwise'
 
 " Language-specific plugins
 Plugin 'wting/rust.vim'
@@ -27,7 +28,7 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'nathanaelkane/vim-indent-guides'
 
 
 " Color schemes
@@ -76,28 +77,20 @@ set ruler
 
 syntax on
 
-no h i
-no i k
-no j h
-no k j
-no l l
-
-inoremap jl <esc>
-inoremap lj <esc>
-vnoremap jl <esc>
-vnoremap lj <esc>
+" vvvvvvvvv Key Remapping vvvvvvvvv
+inoremap jk <esc>
+inoremap kj <esc>
+vnoremap jk <esc>
+vnoremap kj <esc>
 
 noremap ; $
 
-"noremap gi gk
-"noremap gk gj
+noremap <silent> <Leader>v :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Lkzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
 
-"noremap  <buffer> <silent> i gk
-"noremap  <buffer> <silent> k gj
-"noremap  <buffer> <silent> 0 g0
-"noremap  <buffer> <silent> $ g$
-noremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Lkzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
+" ^^^^^^^^^ Key Remapping ^^^^^^^^^
 
+au FileType ocaml setl sw=2 sts=2 et
+au FileType ruby setl sw=2 sts=2 et
 
 let &colorcolumn=80
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
@@ -121,5 +114,3 @@ let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 let g:syntastic_ocaml_checkers = ['merlin']
 
-"au FileType ocaml setl sw=2 sts=2 et
-"au FileType ruby setl sw=2 sts=2 et
