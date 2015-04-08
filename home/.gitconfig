@@ -1,0 +1,14 @@
+[user]
+	email = djmally@gmail.com
+	name = David Mally
+[color]
+ui = auto
+[alias]
+co = checkout
+ci = commit
+cm = commit -m
+st = status
+br = branch
+hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+type = cat-file -t
+dump = cat-file -p
