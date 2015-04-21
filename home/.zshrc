@@ -16,6 +16,7 @@ compinit
 if [ "$TMUX" != "" ]; then vim +qall; fi
 
 alias ls='ls --color=yes'
+alias fuck='$(thefuck $(fc -ln -1))'
 export PATH=/home/djmally/.gem/ruby/2.1.0/bin:$PATH
 export PATH=/home/djmally/.gem/ruby/2.2.0/bin:$PATH
 

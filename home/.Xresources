@@ -2,7 +2,7 @@
 URxvt*scrollBar: false
 
 ! Font Choice
-URxvt*font: xft:Source Code Pro:size=14
+URxvt*font: xft:Source Code Pro:size=16
 
 ! Font Size
 !URxvt.font: 15

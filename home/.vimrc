@@ -22,7 +22,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'bartlomiejdanek/vim-dart'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'Superbil/llvm.vim'
+"Plugin 'Superbil/llvm.vim'
 
 " Airline + status bar plugins
 Plugin 'bling/vim-airline'
