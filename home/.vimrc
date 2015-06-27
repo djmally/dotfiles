@@ -12,7 +12,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-sleuth'
+"Plugin 'tpope/vim-sleuth'
 Plugin 'junegunn/rainbow_parentheses.vim'
 Plugin 'tpope/vim-endwise'
 
@@ -22,6 +22,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'bartlomiejdanek/vim-dart'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'cespare/vim-toml'
 "Plugin 'Superbil/llvm.vim'
 
 " Airline + status bar plugins
