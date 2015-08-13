@@ -1,5 +1,5 @@
 [user]
-	email = djmally@gmail.com
+	email = david.mally@synack.com
 	name = David Mally
 [color]
 ui = auto
@@ -12,3 +12,9 @@ br = branch
 hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 type = cat-file -t
 dump = cat-file -p
+conflicts = ls-files -m
+frune = fetch origin --prune
+[core]
+	editor = /usr/bin/vim
+[flake8]
+	strict = true

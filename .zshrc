@@ -15,12 +15,19 @@ compinit
 
 if [ "$TMUX" != "" ]; then vim +qall; fi
 
-alias ls='ls --color=yes'
-alias fuck='$(thefuck $(fc -ln -1))'
-export PATH=/home/djmally/.gem/ruby/2.1.0/bin:$PATH
-export PATH=/home/djmally/.gem/ruby/2.2.0/bin:$PATH
+source '/usr/local/Cellar/autojump/22.2.4/etc/autojump.sh'
+source ~/.bin/tmuxinator.zsh
+
+alias ls='ls -G'
+alias la='ls -a'
+alias ll='ls -l'
+#alias fuck='$(thefuck $(fc -ln -1))'
+#alias pip='pip3'
+#alias python='python3'
 
 export GREP_COLOR='1;32;40'
+
+export EDITOR='vim'
 
 # Function to switch and save the current path
 function cd() {
@@ -33,27 +40,7 @@ alias cwd='cd "$(cat ~/.cwd)"'
 #PROMPT='%n@%m%# '
 PROMPT_WD=$(pwd | tail -c 15)
 #PROMPT='...%{$(pwd|tail -c 15|grep --color=always /)%${#PWD}G%} %(!.%F{white}.%F{red})%n%f@%F{blue}%m%f%(!.%F{magenta}.)%#%f '
-PROMPT='%(!.%F{white}.%F{yellow})%n%f@%F{cyan}%m%f%(!.%F{magenta}.)%#%f '
-
-# OPAM configuration
-. /home/djmally/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-export PATH="/home/djmally/.rbenv/shims:${PATH}"
-source "/usr/lib/rbenv/libexec/../completions/rbenv.zsh"
-rbenv rehash 2>/dev/null
-rbenv() {
-  typeset command
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  rehash|shell)
-    eval `rbenv "sh-$command" "$@"`;;
-  *)
-    command rbenv "$command" "$@";;
-  esac
-}
+PROMPT='%(!.%F{white}.%F{blue})%n%f@%F{cyan}%m%f%(!.%F{magenta}.)%#%f '
 
 setopt prompt_subst
 autoload -Uz vcs_info

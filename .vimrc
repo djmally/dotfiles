@@ -1,0 +1,158 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Vundle
+Plugin 'gmarik/Vundle.vim'
+
+" Syntax checking, highlighting, & tab completion
+Plugin 'scrooloose/syntastic' " Syntax checker
+Plugin 'ervandew/supertab'    " Tab completion
+Plugin 'kien/ctrlp.vim'       " Fuzzy file finder
+Plugin 'tpope/vim-surround'   " Word-surround (doesn't seem to work?)
+Plugin 'tpope/vim-sleuth'     " File type auto-indent detection
+Plugin 'junegunn/rainbow_parentheses.vim' " Rainbow parentheses!
+Plugin 'tpope/vim-endwise'    " Smartly add `end` to certain blocks (Ruby)
+Plugin 'junegunn/limelight.vim' " Put blocks of text in the Limelight
+Plugin 'junegunn/vim-journal'   " Special highlighting for journal filetypes
+Plugin 'junegunn/goyo.vim'      " Ultra-minimal, single-file highlight
+Plugin 'godlygeek/tabular'          " Easy text block alignment
+
+" Language-specific plugins
+Plugin 'wting/rust.vim'             " Rust highlighting
+Plugin 'phildawes/racer'            " Rust code completion
+Plugin 'leafgarland/typescript-vim' " Typescript highlighting
+Plugin 'bartlomiejdanek/vim-dart'   " Dart highlighting
+Plugin 'plasticboy/vim-markdown'    " Markdown enhancer
+"Plugin 'Superbil/llvm.vim'         " LLVM (breaks some of my colors?)
+
+" Airline + status bar plugins
+Plugin 'bling/vim-airline'          " Airline status bar
+Plugin 'tpope/vim-fugitive'         " Git stuff from vim
+Plugin 'edkolev/tmuxline.vim'       " Airline for tmux
+Plugin 'scrooloose/nerdtree'        " File tree from vim
+Plugin 'nathanaelkane/vim-indent-guides' " Visually display indent levels
+
+" Tmux/Vim split seamless integration
+Plugin 'christoomey/vim-tmux-navigator' " C^hjkl to navigate tmux
+
+" Color schemes
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'veloce/vim-aldmeris'
+Plugin 'dsolstad/vim-wombat256i'
+Plugin 'junegunn/seoul256.vim'
+
+call vundle#end()
+
+filetype plugin indent on
+
+set t_Co=256 " 256-color mode
+colorscheme seoul256 " color scheme
+
+"let g:solarized_visibility = "high"
+"let g:solarized_constrast = "high"
+
+let g:seoul256_background = 235
+
+set encoding=utf-8
+set guifont=Sauce\ Code\ Powerline\ 15
+
+" Correct Airline symbols
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline_powerline_fonts = 1
+
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+let g:syntastic_aggregating_error = 1
+
+let g:limelight_conceal_ctermfg = 'darkgray'
+
+" autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
+
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+
+autocmd User GoyoEnter Limelight
+autocmd User GoyoLeave Limelight!
+
+set hidden
+let g:racer_cmd = "/Users/david.mally/.vim/bundle/racer/target/debug/racer"
+let $RUST_SRC_PATH="/Users/david.mally/src/"
+
+set number
+"set relativenumber
+set incsearch
+set ignorecase
+set smartcase
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set ai
+set hlsearch
+set wildmenu
+set wildmode=longest,list
+set showcmd
+set ruler
+set splitbelow
+set splitright
+"set mouse=a
+set clipboard=unnamed
+set backspace=indent,eol,start
+
+syntax on
+
+" vvvvvvvvv Key Remapping vvvvvvvvv
+inoremap jk <esc>
+inoremap kj <esc>
+vnoremap jk <esc>
+vnoremap kj <esc>
+
+noremap ; :noh<CR>
+noremap , :set relativenumber!<CR>
+
+noremap <silent> <Leader>v :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Lkzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
+
+" ^^^^^^^^^ Key Remapping ^^^^^^^^^
+
+au FileType ocaml setl sw=2 sts=2 et
+au FileType ruby setl sw=2 sts=2 et
+au FileType c setl sw=4 sts=4 et
+au BufNewFile,BufRead *.oat set filetype=cpp
+
+let &colorcolumn=80
+highlight ColorColumn ctermbg=darkcyan guibg=#2c2d27
+set cursorcolumn
+
+highlight ExtraWhitespace ctermbg=darkmagenta guibg=lightgreen
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+runtime macros/matchit.vim
+
+set laststatus=2
+set timeoutlen=50
+let g:airline_powerline_fonts=1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.space="\ua0"
+
