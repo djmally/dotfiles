@@ -1,6 +1,20 @@
+# Set C^f as leader key
 set -g prefix C-f
 unbind C-b
-bind C-s send-prefix
+bind C-f send-prefix
 
 unbind ^F
 bind ^F select-pane -t :.+
+
+# Use shift+arrows to switch windows
+bind -n S-Left previous-window
+bind -n S-Right next-window
+
+# Mouse
+# set-option -g mouse-select-pane on
+# set-option -g mouse-resize-pane on
+# set-option -g mouse-select-window on
+
+# Window numbering staring at 1 instead of 0
+set-option -g base-index 1
+set-option -g pane-base-index 1
