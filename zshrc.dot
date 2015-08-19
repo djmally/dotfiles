@@ -15,10 +15,7 @@ compinit
 
 if [ "$TMUX" != "" ]; then vim +qall; fi
 
-source '/usr/local/Cellar/autojump/22.2.4/etc/autojump.sh'
-source ~/.bin/tmuxinator.zsh
-
-alias ls='ls -G'
+alias ls='ls --color=yes'
 alias la='ls -a'
 alias ll='ls -l'
 #alias fuck='$(thefuck $(fc -ln -1))'
