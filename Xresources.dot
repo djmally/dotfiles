@@ -18,44 +18,46 @@ URxvt*shading: 30
 ! "Clean" Color Scheme
 
 ! Background & Text
-URxvt*background:       #262729
-URxvt*foreground:       #f8f8f2
+URxvt*background: #3a3a3a
+URxvt*foreground: #d0d0d0
 
 ! Black
-URxvt*color0:           #262729
-URxvt*color8:           #262729
+URxvt*color0: #4e4e4e
+URxvt*color8: #626262
 
 ! Red
-URxvt*color1:           #f92671
-URxvt*color9:           #ff669d
+URxvt*color1: #d68787
+URxvt*color9: #d75f87
 
 ! Green
-URxvt*color2:           #a6e22e
-URxvt*color10:          #beed5f
+URxvt*color2: #5f865f
+URxvt*color10: #87af87
 
 ! Yellow
-URxvt*color3:           #fd971f
-URxvt*color11:          #e6db74
+URxvt*color3: #d8af5f
+URxvt*color11: #ffd787
 
 ! Blue
-URxvt*color4:           #1692d0
-URxvt*color12:          #66d9ef
+URxvt*color4: #85add4
+URxvt*color12: #add4fb
 
 ! Magenta
-URxvt*color5:           #9e6ffe
-URxvt*color13:          #df92f6
+URxvt*color5: #d7afaf
+URxvt*color13: #ffafaf
 
 ! Cyan
-URxvt*color6:           #5e7175
-URxvt*color14:          #a3babf
+URxvt*color6: #87afaf
+URxvt*color14: #87d7d7
 
 ! White
-URxvt*color7:           #ffffff
-URxvt*color15:          #ffffff
+URxvt*color7: #d0d0d0
+URxvt*color15: #e4e4e4
 
 ! Cursor
-URxvt*cursorColor:      #b5d2dd
+URxvt*cursorColor: #d0d0d0
+URxvt*cursorColor2: #3a3a3a
 
+URxvt*colorBD: #e4e4e4
 
 ! Font Size Bindings
 URxvt.iso14755: false
