@@ -17,6 +17,7 @@ if [ "$TMUX" != "" ]; then vim +qall; fi
 
 alias ls='ls --color=yes'
 alias fuck='$(thefuck $(fc -ln -1))'
+export XDG_CONFIG_HOME=.config
 export PATH=/home/djmally/.gem/ruby/2.1.0/bin:$PATH
 export PATH=/home/djmally/.gem/ruby/2.2.0/bin:$PATH
 
@@ -37,23 +38,6 @@ PROMPT='%(!.%F{white}.%F{yellow})%n%f@%F{cyan}%m%f%(!.%F{magenta}.)%#%f '
 
 # OPAM configuration
 . /home/djmally/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-export PATH="/home/djmally/.rbenv/shims:${PATH}"
-source "/usr/lib/rbenv/libexec/../completions/rbenv.zsh"
-rbenv rehash 2>/dev/null
-rbenv() {
-  typeset command
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  rehash|shell)
-    eval `rbenv "sh-$command" "$@"`;;
-  *)
-    command rbenv "$command" "$@";;
-  esac
-}
 
 setopt prompt_subst
 autoload -Uz vcs_info
