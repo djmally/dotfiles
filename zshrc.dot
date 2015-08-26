@@ -18,6 +18,8 @@ if [ "$TMUX" != "" ]; then vim +qall; fi
 alias ls='ls --color=yes'
 alias la='ls -a'
 alias ll='ls -l'
+alias emacs='emacs -nw'
+alias vim='nvim'
 #alias fuck='$(thefuck $(fc -ln -1))'
 #alias pip='pip3'
 #alias python='python3'
