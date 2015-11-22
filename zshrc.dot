@@ -22,6 +22,8 @@ alias emacs='emacs -nw'
 alias vim='nvim'
 #alias pip='pip3'
 #alias python='python3'
+alias cargob='cargo build'
+alias cargot='cargo test'
 
 export GREP_COLOR='1;32;40'
 
