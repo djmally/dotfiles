@@ -3,4 +3,5 @@
 for file in $(ls *.dot); do
     ln -s ~/.dotfiles/$file ~/.${file%.dot}
 done
-ln -s ~/.dotfiles/vimrc.dot ~/.nvimrc
+mkdir -p ~/.config/nvim/
+ln -s ~/.dotfiles/vimrc.dot ~/.config/nvim/init.vim

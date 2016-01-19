@@ -26,6 +26,8 @@ alias cargoc='cargo check'
 #alias fuck='$(thefuck $(fc -ln -1))'
 #alias pip='pip3'
 #alias python='python3'
+alias cargob='cargo build'
+alias cargot='cargo test'
 
 export GREP_COLOR='1;32;40'
 

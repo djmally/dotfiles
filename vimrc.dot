@@ -27,7 +27,7 @@ Plugin 'leafgarland/typescript-vim' " Typescript highlighting
 Plugin 'bartlomiejdanek/vim-dart'   " Dart highlighting
 Plugin 'plasticboy/vim-markdown'    " Markdown enhancer
 "Plugin 'Superbil/llvm.vim'         " LLVM (breaks some of my colors?)
-Plugin 'cespare/vim-toml'           " TOML
+Plugin 'cespare/vim-toml'           " TOML highlighting
 
 " Airline + status bar plugins
 Plugin 'bling/vim-airline'          " Airline status bar
