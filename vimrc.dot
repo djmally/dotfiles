@@ -27,6 +27,7 @@ Plugin 'leafgarland/typescript-vim' " Typescript highlighting
 Plugin 'bartlomiejdanek/vim-dart'   " Dart highlighting
 Plugin 'plasticboy/vim-markdown'    " Markdown enhancer
 "Plugin 'Superbil/llvm.vim'         " LLVM (breaks some of my colors?)
+Plugin 'cespare/vim-toml'           " TOML
 
 " Airline + status bar plugins
 Plugin 'bling/vim-airline'          " Airline status bar
@@ -138,7 +139,7 @@ au FileType ruby setl sw=2 sts=2 et
 au FileType c setl sw=4 sts=4 et
 au BufNewFile,BufRead *.oat set filetype=cpp
 
-let &colorcolumn=80
+let &colorcolumn=100
 highlight ColorColumn ctermbg=darkcyan guibg=#2c2d27
 set cursorcolumn
 
@@ -158,3 +159,4 @@ endif
 let g:airline_symbols.space="\ua0"
 hi Normal ctermbg=none
 
+au BufRead,BufNewFile *.md setlocal textwidth=80
