@@ -26,8 +26,11 @@ Plugin 'wting/rust.vim'             " Rust highlighting
 Plugin 'leafgarland/typescript-vim' " Typescript highlighting
 Plugin 'bartlomiejdanek/vim-dart'   " Dart highlighting
 Plugin 'plasticboy/vim-markdown'    " Markdown enhancer
-"Plugin 'Superbil/llvm.vim'         " LLVM (breaks some of my colors?)
+Plugin 'Superbil/llvm.vim'          " LLVM (breaks some of my colors?)
 Plugin 'cespare/vim-toml'           " TOML highlighting
+Plugin 'def-lkb/vimbufsync'         " Dependency for Coquille
+Plugin 'trefis/coquille'            " Coq
+Plugin 'daveyarwood/vim-alda'       " Aldaj
 
 " Airline + status bar plugins
 Plugin 'bling/vim-airline'          " Airline status bar
@@ -129,8 +132,13 @@ vnoremap kj <esc>
 
 noremap ; :noh<CR>
 noremap , :set relativenumber!<CR>
+noremap . :set foldmethod=syntax<CR>
 
 noremap <silent> <Leader>v :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Lkzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
+
+au FileType coq nnoremap <C-n> :CoqNext<CR>
+au FileType coq nnoremap <C-b> :CoqUndo<CR>
+au FileType coq nnoremap <C-t> :CoqToCursor<CR>
 
 " ^^^^^^^^^ Key Remapping ^^^^^^^^^
 
@@ -160,3 +168,4 @@ let g:airline_symbols.space="\ua0"
 hi Normal ctermbg=none
 
 au BufRead,BufNewFile *.md setlocal textwidth=80
+

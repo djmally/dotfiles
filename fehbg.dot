@@ -1,2 +1,2 @@
 #!/bin/sh
-feh  --image-bg black --bg-max '/home/djmally/wallpapers/dd.png' 
+feh  --image-bg black --bg-center '/home/djmally/wallpapers/v_has_come_to.jpg' 
