@@ -15,21 +15,33 @@ compinit
 
 if [ "$TMUX" != "" ]; then vim +qall; fi
 
-alias ls='ls --color=yes'
+alias ls='ls -G'
 alias la='ls -a'
 alias ll='ls -l'
+alias ks='exa'
+alias grep='grep --color=yes'
+alias ggrep='git grep'
 alias emacs='emacs -nw'
 alias vim='nvim'
+alias tmux="TERM=screen-256color-bce tmux"
 alias cargob='cargo build'
 alias cargot='cargo test'
 alias cargoc='cargo check'
-#alias fuck='$(thefuck $(fc -ln -1))'
+alias clippy='cargo build --features "clippy"'
+eval "$(thefuck --alias)"
+eval "$(thefuck --alias FUCK)"
 #alias pip='pip3'
 #alias python='python3'
 alias cargob='cargo build'
 alias cargot='cargo test'
+alias gist='git status'
+alias gits='git status'
+alias gitst='git status'
+alias g='git'
+alias e='vim'
+alias d='docker'
 
-export GREP_COLOR='1;32;40'
+export GREP_COLOR='1;31;40'
 
 export EDITOR='vim'
 
@@ -66,6 +78,12 @@ vcs_info_wrapper() {
   fi
 }
 RPROMPT=$'$(vcs_info_wrapper)'
-eval "$(thefuck --alias)"
+#eval "$(thefuck --alias)"
 
-export PATH=/home/djmally/.gem/ruby/2.3.0/bin:$PATH
+autoload -U select-word-style
+select-word-style bash
+
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+bindkey ";3C" forward-word
+bindkey ";3D" backward-word
